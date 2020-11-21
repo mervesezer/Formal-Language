@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biçimsel Diller Ödev</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container w-100 text-center">
+      <h1 class="mb-5 mt-5 text-center">
+        Biçimsel Diller ve Otomatlar Vize Ödev
+      </h1>
+
+      <div class="row pt-5">
+        <div class="col">
+          <div class="input-group w-75 m-auto">
+            <div class="input-group-prepend">
+              <span class="input-group-text">G = (</span>
+            </div>
+            <input
+              class="form-control"
+              type="text"
+              id="V"
+              style="text-align: center"
+              placeholder="V (örn. S,A)"
+            />
+            <input
+              class="form-control"
+              type="text"
+              id="T"
+              style="text-align: center"
+              placeholder="T (örn. 0,a,b)"
+            />
+            <input
+              class="form-control"
+              type="text"
+              id="P"
+              placeholder="P"
+              style="text-align: center"
+              disabled
+            />
+            <input
+              class="form-control"
+              type="text"
+              id="S"
+              placeholder="S"
+              style="text-align: center"
+              disabled
+            />
+            <div class="input-group-append">
+              <span class="input-group-text">)</span>
+            </div>
+          </div>
+
+          <button
+            class="btn btn-dark mt-3"
+            type="button"
+            onclick="enterRules()"
+          >
+            Kuralları Gir
+          </button>
+
+          <br />
+          <br />
+
+          <div id="variablesDiv"></div>
+
+          <br />
+
+          <button
+            class="btn btn-dark mb-3"
+            type="button"
+            id="generateButton"
+            disabled
+            onclick="generateDescription()"
+          >
+            Tanım Üret
+          </button>
+
+          <h5>Tanım</h5>
+          <input
+            class="form-control ml-auto mr-auto w-50"
+            type="text"
+            id="result"
+            style="text-align: center"
+            disabled
+          />
+        </div>
+
+        <div class="col-4">
+          <h3>Açıklama</h3>
+          <p>
+            Boş terminal olarak <b>λ</b> veya <b>ε</b> işareti kullanılabilir.
+          </p>
+          <p>
+            Program girilen kurallara göre 50 tane rastgele kelime oluşturarak
+            bu kelimelerde sırasıyla 5 kuralı kontrol ederek dil tanımı
+            yapmaktadır.
+          </p>
+
+          <h5>Kurallar</h5>
+          <div class="w-100 ml-auto mr-auto mt-3 text-left">
+            <ul>
+              <li>
+                Eğer tek terminal varsa terminal sayısına göre mod tanımı
+                yapılır.
+              </li>
+              <li>
+                Tüm kelimelerde ilk yarısı ve 2.yarısı kontrol edilerek reverse
+                olup olmadığına bakılır.
+              </li>
+              <li>Terminal sayıları birbirine eşit ise eşit tanımı yapılır.</li>
+              <li>
+                Terminal sayıları birbirine eşit değil ise eşit değildir tanımı
+                yapılır.
+              </li>
+              <li>
+                Terminal sayılarına göre oluşan terminal sayısı sürekli çift mi
+                yoksa hem çift hem tek olabilir mi diye kontrol edilir.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="operations.js"></script>
+  </body>
+</html>
